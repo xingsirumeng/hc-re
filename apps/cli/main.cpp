@@ -53,7 +53,7 @@ int main(int argc, char **argv)
     server.start("127.0.0.1", port);
 
     using namespace std::chrono_literals;
-    // Blocks until something is triggered.
+    // Blocks until something is triggered (such as shutdown command).
     while (server.is_running()) {
         std::this_thread::sleep_for(10ms); // Gives out CPU
     }

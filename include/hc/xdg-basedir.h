@@ -3,7 +3,6 @@
 #include <filesystem>
 #include <optional>
 #include <string>
-#include <string_view>
 
 namespace xdg {
 

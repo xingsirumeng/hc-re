@@ -1,7 +1,9 @@
 #pragma once
 #include <archive.h>
+
 #include <filesystem>
 #include <locale>
+#include <span>
 #include <string>
 #include <vector>
 
