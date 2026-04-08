@@ -3,22 +3,31 @@
 Due to unfamiliar with golang, I ran into mess of code. In this remaster, I want to reorganize and
 write clean code in cpp.
 
-## Quickstart
-
-```bash
-cmake -Bbuild -S. -GNinja
-cmake --build build
-cd build
-./hc
-```
-
 ## Prerequisite
 
 You should install `cmake`, `perl`.
 
-You can use `conan` to install required dependencies. Here is an example for my computer:
+C++ dependencies are managed by `conan`. You can install `conan` by pip:
+```bash
+pip install conan
 ```
-conan install . -of build -b missing -pr debug -pr gnu17
+
+Then initialize `conan` by:
+```bash
+conan profile detect
+```
+
+You may use `conan` to install required c++ packages. Here is an example for my computer:
+```bash
+conan install . -of build -b missing
+```
+
+## Quickstart
+
+```bash
+cmake --preset conan-default # In some installation, use `conan-release`
+cmake --build build
+./build/apps/cli/hc
 ```
 
 ## Contributing
