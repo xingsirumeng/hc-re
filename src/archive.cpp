@@ -1,6 +1,7 @@
 #include <hc/archive.h>
 
 #include <algorithm>
+#include <array>
 #include <cassert>
 #include <chrono>
 #include <filesystem>
@@ -304,7 +305,7 @@ ArchiveEntry::ArchiveEntry(fs::path const &disk_path,
                                    reinterpret_cast<char const *>(p.c_str()));
         archive_entry_set_size(entry_, 0);
 
-        auto mode = static_cast<mode_t>(fstatus.permissions()) & 07777U;
+        auto mode = static_cast<ModeType>(fstatus.permissions()) & 07777U;
         mode |= (mode & 0444) >> 2; // (GNU tar behavior?
         archive_entry_set_perm(entry_, mode);
         break;

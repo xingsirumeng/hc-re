@@ -19,7 +19,8 @@ class HCReRecipe(ConanFile):
         "cpp-httplib/0.27.0",
         "gtest/1.17.0",
         "cppcodec/0.2",
-        "libpqxx/8.0.0",
+        "libpq/17.7",
+        "libpqxx/8.0.1",
         "libarchive/3.8.1",
     )
     generators = (
