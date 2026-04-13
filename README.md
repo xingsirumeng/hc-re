@@ -3,6 +3,14 @@
 Due to unfamiliar with golang, I ran into mess of code. In this remaster, I want to reorganize and
 write clean code in cpp.
 
+## Features
+
+- Complete flow of assignment submission, management and grading.
+- Support computing AIGC rate of submitted assignment.
+- Support plagiarism checking for assignments in a same assignment.
+- Pretty visual graphs for teachers and students to check the status of
+  assignment submission and grading.
+
 ## Prerequisite
 
 You should install `cmake`, `perl`.
