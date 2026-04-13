@@ -1,5 +1,5 @@
 if(NOT HCRE_TEST_DB)
-    message(WARNING "HCRE_TEST_DB is empty, which may leads to problem")
+    message(WARNING "HCRE_TEST_DB is empty, which may lead to problem")
     message(WARNING
             "Example -DHCRE_TEST_DB='host=localhost dbname=test user=postgres'")
 endif()
@@ -15,6 +15,15 @@ target_sources(server-test
 target_compile_definitions(server-test
     PRIVATE HCRE_TEST_DB=\"${HCRE_TEST_DB}\"
 )
+
+if(NOT HCRE_TEST_DB_PASSWORD)
+    message(WARNING "HCRE_TEST_DB_PASSWORD is empty; if you are on Windows it may lead to problem")
+    message(WARNING "Example -DHCRE_TEST_DB_PASSWORD='your_password'")
+else()
+    target_compile_definitions(server-test
+        PRIVATE HCRE_TEST_DB_PASSWORD=\"${HCRE_TEST_DB_PASSWORD}\"
+    )
+endif()
 
 target_link_libraries(server-test
     PRIVATE

@@ -58,6 +58,8 @@ configure_file(
 option(HCRE_BUILD_TESTS "Whether to build tests" OFF)
 set(HCRE_TEST_DB "" CACHE STRING
     "Postgresql test databse connection string, used for tests")
+set(HCRE_TEST_DB_PASSWORD "" CACHE STRING
+    "Postgresql test databse password, used for tests")
 
 if(HCRE_BUILD_TESTS)
     add_subdirectory(tests)

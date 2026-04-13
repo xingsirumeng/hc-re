@@ -18,7 +18,11 @@ using httplib::StatusCode;
 
 class TestDB {
   public:
-    TestDB() : connection_(HCRE_TEST_DB)
+    TestDB() : connection_(HCRE_TEST_DB
+#ifdef HCRE_TEST_DB_PASSWORD
+		" password=" + std::string(HCRE_TEST_DB_PASSWORD)
+#endif // HCRE_TEST_DB_PASSWORD
+    )
     {
         // TODO(ShelpAm): consider creating test database via pqxx.
         // pqxx::nontransaction ntx(connection_);
@@ -82,6 +86,9 @@ class ServerTest : public testing::Test {
         config.host = testdb_.connection().hostname();
         config.dbname = testdb_.connection().dbname();
         config.user = testdb_.connection().username();
+#ifdef HCRE_TEST_DB_PASSWORD
+        config.password = HCRE_TEST_DB_PASSWORD;
+#endif // HCRE_TEST_DB_PASSWORD
         return config;
     }
 
