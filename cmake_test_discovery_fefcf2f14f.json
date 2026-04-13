@@ -1,0 +1,62 @@
+{
+  "tests": 10,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "ServerTest",
+      "tests": 10,
+      "testsuite": [
+        {
+          "name": "ConnectivityTest",
+          "file": "D:\\hc-re\\tests\\server-test.cpp",
+          "line": 101
+        },
+        {
+          "name": "WrongPath",
+          "file": "D:\\hc-re\\tests\\server-test.cpp",
+          "line": 108
+        },
+        {
+          "name": "Valid",
+          "file": "D:\\hc-re\\tests\\server-test.cpp",
+          "line": 115
+        },
+        {
+          "name": "AddAssignment",
+          "file": "D:\\hc-re\\tests\\server-test.cpp",
+          "line": 122
+        },
+        {
+          "name": "AddStudent",
+          "file": "D:\\hc-re\\tests\\server-test.cpp",
+          "line": 138
+        },
+        {
+          "name": "SubmitToAssignment",
+          "file": "D:\\hc-re\\tests\\server-test.cpp",
+          "line": 149
+        },
+        {
+          "name": "Export",
+          "file": "D:\\hc-re\\tests\\server-test.cpp",
+          "line": 210
+        },
+        {
+          "name": "Stop",
+          "file": "D:\\hc-re\\tests\\server-test.cpp",
+          "line": 242
+        },
+        {
+          "name": "DISABLED_AdminLogin",
+          "file": "D:\\hc-re\\tests\\server-test.cpp",
+          "line": 253
+        },
+        {
+          "name": "DISABLED_AdminVerification",
+          "file": "D:\\hc-re\\tests\\server-test.cpp",
+          "line": 258
+        }
+      ]
+    }
+  ]
+}
