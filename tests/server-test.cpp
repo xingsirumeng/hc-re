@@ -7,7 +7,6 @@
 #include <pqxx/pqxx>
 #include <spdlog/spdlog.h>
 #include <sstream>
-#include <thread>
 
 #ifndef HCRE_TEST_DB
 #error [dev] HCHCRE_TEST_DB not defined, should be defined in CMakeLists.txt
@@ -21,6 +20,10 @@ class TestDB {
   public:
     TestDB() : connection_(HCRE_TEST_DB)
     {
+        // TODO(ShelpAm): consider creating test database via pqxx.
+        // pqxx::nontransaction ntx(connection_);
+        // ntx.exec("CREATE DATABASE hcre_test;");
+        // ntx.commit(); // For nontransaction, this is a no-op.
         pqxx::work tx(connection_);
         tx.exec(file_content("scripts/table.sql"));
         tx.commit();
