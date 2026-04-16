@@ -11,8 +11,9 @@ struct Assignment {
     std::string name;
     TimePoint start_time;
     TimePoint end_time;
-    std::unordered_map<std::string, Submission>
-        submissions; // StudentID -> Submission
+
+    // StudentID -> Submission
+    std::unordered_map<std::string, Submission> submissions;
 
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(Assignment, name, start_time, end_time,
                                    submissions);

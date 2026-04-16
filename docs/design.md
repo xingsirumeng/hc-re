@@ -36,7 +36,7 @@ HC-RE utilize C/S architecture.
 
 - Student interface
   - Submit page
-  - Assignment checking page
+  - Assignments checking page
     - Details of assignments page
 - Teacher interface
   - Assignment management page (Add, Edit, Delete)
@@ -45,3 +45,4 @@ HC-RE utilize C/S architecture.
   - Server management page
 
 In frontend (client), 
+
